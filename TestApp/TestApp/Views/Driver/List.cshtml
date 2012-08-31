@@ -1,0 +1,14 @@
+﻿@model IEnumerable<KartingApp.Domain.Entities.Driver>
+
+@{
+    ViewBag.Title = "Drivers";
+}
+
+<h2>Drivers</h2>
+@foreach (var p in Model) {
+    @Html.ActionLink(p.Name + "," + p.Hometown, "Detail", new { id=p.DriverID })<br />
+}
+
+<p>@Html.ActionLink("Add driver", "Create")</p>
+
+@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })
