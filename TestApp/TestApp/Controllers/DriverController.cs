@@ -5,16 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using KartingApp.Domain.Abstract;
 using KartingApp.Domain.Entities;
+using KartingApp.Domain.Concrete;
 
-namespace KartingApp.WebUI.Controllers
+namespace TestApp.WebUI.Controllers
 {
     public class DriverController : Controller
     {
         private IDriverRepository repository;
 
-        public DriverController(IDriverRepository driverRepository)
+        public DriverController()
         {
-            repository = driverRepository;
+            repository = new EFDriverRepository();
         }
 
         public ViewResult List()
