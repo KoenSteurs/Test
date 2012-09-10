@@ -10,3 +10,4 @@ C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\bin\Ninject.dll
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\bin\Ninject.pdb
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\bin\Ninject.xml
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\obj\Debug\TestApp.WebUI.csprojResolveAssemblyReference.cache
+C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\bin\MySql.Data.dll
