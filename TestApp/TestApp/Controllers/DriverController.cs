@@ -9,6 +9,7 @@ using KartingApp.Domain.Concrete;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Data.Common;
+using System.Web.Management;
 
 namespace TestApp.WebUI.Controllers
 {
@@ -46,6 +47,8 @@ namespace TestApp.WebUI.Controllers
                 ViewBag.Response = ex.Message;
             }
 
+            new LogEvent("message to myself").Raise();
+
             MySqlCommand sql = new MySqlCommand("select DriverID from Drivers order by DriverID desc", conn);
             ViewBag.Response = sql.ExecuteScalar();
 
@@ -53,5 +56,7 @@ namespace TestApp.WebUI.Controllers
 
             return View(repository.Drivers);
         }
+
+        public class LogEvent : WebRequestErrorEvent { public LogEvent(string message) : base(null, null, 100001, new Exception(message)) { } }
     }
 }
