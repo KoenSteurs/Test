@@ -46,11 +46,10 @@ namespace TestApp.WebUI.Controllers
                 ViewBag.Response = ex.Message;
             }
 
-            MySqlCommand sql = new MySqlCommand("select Description from Tracks", conn);
+            MySqlCommand sql = new MySqlCommand("select DriverID from Drivers order by DriverID desc", conn);
             ViewBag.Response = sql.ExecuteScalar();
 
             conn.Close();
-
 
             return View(repository.Drivers);
         }
