@@ -3,6 +3,7 @@ C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp.Domain\bin\Debug\Test
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp.Domain\bin\Debug\TestApp.Domain.pdb
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp.Domain\bin\Debug\EntityFramework.dll
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp.Domain\bin\Debug\MySql.Data.dll
+C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp.Domain\bin\Debug\MySql.Data.Entity.dll
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp.Domain\bin\Debug\EntityFramework.xml
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp.Domain\obj\Debug\TestApp.Domain.dll
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp.Domain\obj\Debug\TestApp.Domain.pdb
