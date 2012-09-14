@@ -1,10 +1,15 @@
 body
 {
     font-size: .85em;
-    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    color: #232323;
-    background-color: #fff;
+    font-family: "Segoe WP";
+    /* font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif; */
+    color: #ffffff;
+    background-color: #000000;
 }
+
+input {color:White; background-color: #333; border: 1px solid black; cursor:pointer;} 
+
+input:hover {background: #6E6E6E;}
 
 header,
 footer,
@@ -60,7 +65,7 @@ textarea
 .input-validation-error
 {
     border: 1px solid #ff0000;
-    background-color: #ffeeee;
+    background-color: #6E6E6E;
 }
 
 .validation-summary-errors
@@ -73,3 +78,34 @@ textarea
 {
     display: none;
 }
+
+ a:link
+ {
+ text-decoration: none;
+ color: #ffffff;
+ }
+
+ a:visited{
+ text-decoration: none;
+ color: #ffffff;
+ }
+
+ a:hover{
+ text-decoration: none;
+ color: #ffffff;
+ }
+
+ a:active{
+ text-decoration: none;
+ color: #ffffff;
+ } 
+ 
+select {
+   background: #333;
+   border: 1px solid black;
+   color: #ffffff;
+   cursor:pointer;
+}
+
+
+
