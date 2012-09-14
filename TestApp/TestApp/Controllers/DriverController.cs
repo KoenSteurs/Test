@@ -17,10 +17,15 @@ namespace TestApp.WebUI.Controllers
     {
         private IDriverRepository repository;
 
-        public DriverController()
+        public DriverController(IDriverRepository driverRepository)
         {
-            repository = new EFDriverRepository();
+            repository = driverRepository;
         }
+
+        //public DriverController()
+        //{
+        //    repository = new EFDriverRepository();
+        //}
 
         public ViewResult List()
         {

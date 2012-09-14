@@ -12,3 +12,6 @@ C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\bin\Ninject.pdb
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\bin\Ninject.xml
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\obj\Debug\TestApp.dll
 C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\obj\Debug\TestApp.pdb
+C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\bin\Moq.dll
+C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\bin\Moq.pdb
+C:\Users\Koen Steurs\Documents\GitHub\Test\TestApp\TestApp\bin\Moq.xml
