@@ -5,8 +5,17 @@
 }
 
 <h2>Drivers</h2>
-@foreach (var p in Model) {
-    @Html.ActionLink(p.Name + "," + p.Hometown, "Detail", new { id=p.DriverID })<br />
+
+@if (Model != null)
+{
+    foreach (var p in Model)
+    {
+        @Html.ActionLink(p.Name + "," + p.Hometown, "Detail", new { id = p.DriverID })<br />
+    }
+}
+else
+{
+    <p>Model Is null!</p>
 }
 
 <p>@Html.ActionLink("Add driver", "Create")</p>

@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;   
+using System.Web;
 using System.Web.Mvc;
 using KartingApp.Domain.Abstract;
 using KartingApp.Domain.Entities;
 using KartingApp.Domain.Concrete;
-using MySql.Data.MySqlClient;
-using System.Data;
-using System.Data.Common;
-using System.Web.Management;
 
-namespace TestApp.WebUI.Controllers
+namespace KartingApp.WebUI.Controllers
 {
     public class DriverController : Controller
     {
@@ -22,46 +18,63 @@ namespace TestApp.WebUI.Controllers
             repository = driverRepository;
         }
 
-        //public DriverController()
-        //{
-        //    repository = new EFDriverRepository();
-        //}
-
         public ViewResult List()
         {
             return View(repository.Drivers);
         }
 
-        public ViewResult Test()
+        public ViewResult Create()
         {
-            MySqlConnection conn;
-            conn = null;
-            string myConnectionString;
+            return View("Edit", new Driver());
+        }        
 
-            myConnectionString = "server=58012422-1aa5-46aa-9e2e-a0bd00f552e2.mysql.sequelizer.com;database=db580124221aa546aa9e2ea0bd00f552e2;uid=oisfyfzfrlktdouh;pwd=5o8Wpvry3BozmVvjwyTrTys2GqRKxLJ4tHSxcT2mctsD6Ca3fpxSVDEE5gp7MNbp";
+        [HttpGet]
+        public ViewResult Edit(int id = 1)
+        {
+            Driver driv = repository.Drivers.FirstOrDefault(p => p.DriverID == id);
 
-            try
-            {
-                conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = myConnectionString;
-                conn.Open();
-                ViewBag.Response = "OK";
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                ViewBag.Response = ex.Message;
-            }
-
-            new LogEvent("message to myself").Raise();
-
-            MySqlCommand sql = new MySqlCommand("select DriverID from Drivers order by DriverID desc", conn);
-            ViewBag.Response = sql.ExecuteScalar();
-
-            conn.Close();
-
-            return View(repository.Drivers);
+            return View("Edit", driv);
         }
 
-        public class LogEvent : WebRequestErrorEvent { public LogEvent(string message) : base(null, null, 100001, new Exception(message)) { } }
+        public ViewResult Detail(int id = 1)
+        {
+            Driver driv = repository.Drivers.FirstOrDefault(p => p.DriverID == id);
+
+            return View(driv);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Driver driver)
+        {
+            if (ModelState.IsValid)
+            {
+                // save the entity
+                repository.SaveDriver(driver);
+                // add a message to the viewbag
+                TempData["message"] = string.Format("{0} has been saved", driver.Name);
+                // return the user to the list
+                return RedirectToAction("List");
+            }
+            else
+            {
+                // there is something wrong with the data values
+                return View(driver);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Driver driver)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.DeleteDriver(driver);
+                return RedirectToRoute(new { controller = "Driver", action = "List" });
+            }
+            else
+            {
+                return RedirectToRoute(new { controller = "Driver", action = "Edit", id = driver.DriverID });
+            }
+        }
+
     }
 }

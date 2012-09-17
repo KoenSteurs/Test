@@ -56,9 +56,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IDriverRepository.cs" />
+    <Compile Include="Abstract\IRaceRepository.cs" />
+    <Compile Include="Abstract\IRaceResultRepository.cs" />
+    <Compile Include="Abstract\ITrackRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFDriverRepository.cs" />
+    <Compile Include="Concrete\EFRaceRepository.cs" />
+    <Compile Include="Concrete\EFRaceResultRepository.cs" />
+    <Compile Include="Concrete\EFTrackRepository.cs" />
     <Compile Include="Entities\Driver.cs" />
+    <Compile Include="Entities\Race.cs" />
+    <Compile Include="Entities\RaceResult.cs" />
+    <Compile Include="Entities\Track.cs" />
+    <Compile Include="Other\Calculations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

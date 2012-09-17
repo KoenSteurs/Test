@@ -1,0 +1,31 @@
+﻿@model KartingApp.Domain.Entities.Driver
+
+@{
+    ViewBag.Title = "Edit Driver";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+//        $('input').button().css('float', 'left').css('margin', '5px');
+    }
+</script>
+
+@using (Html.BeginForm("Edit", "Driver",
+    FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.EditorForModel()
+
+    <input type="submit" value="Save" />
+}
+
+@using (Html.BeginForm("Delete", "Driver",
+    FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
+    <div>@Html.EditorFor(x => x.DriverID)</div>
+    @Html.HiddenFor(x => x.Hometown)
+    @Html.HiddenFor(x => x.Name)
+    <input type="submit" value="Delete" />
+}
+
+<br />@Html.ActionLink("Cancel and return to List", "List")

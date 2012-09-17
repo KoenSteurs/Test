@@ -82,6 +82,9 @@
   <ItemGroup>
     <Compile Include="Controllers\DriverController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\RaceController.cs" />
+    <Compile Include="Controllers\RaceResultController.cs" />
+    <Compile Include="Controllers\TrackController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,7 +177,24 @@
     <Content Include="Views\Driver\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Driver\Test.cshtml" />
+    <Content Include="Views\Driver\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Driver\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Race\Detail.cshtml" />
+    <Content Include="Views\Race\Edit.cshtml" />
+    <Content Include="Views\Race\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\RaceResult\Edit.cshtml" />
+    <Content Include="Views\RaceResult\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Track\Detail.cshtml" />
+    <Content Include="Views\Track\Edit.cshtml" />
+    <Content Include="Views\Track\List.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

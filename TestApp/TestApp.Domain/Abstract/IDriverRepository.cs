@@ -8,8 +8,9 @@ namespace KartingApp.Domain.Abstract
 {
     public interface IDriverRepository
     {
-        IQueryable<Driver> Drivers { get; }
-        void SaveDriver(Driver driver);
-        void DeleteDriver(Driver driver);
+            IQueryable<Driver> Drivers { get; }
+            IQueryable<RaceResult> RaceResults { get; }
+            void SaveDriver(Driver driver);
+            void DeleteDriver(Driver driver);
     }
 }

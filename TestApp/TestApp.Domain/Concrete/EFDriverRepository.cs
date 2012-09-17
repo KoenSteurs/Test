@@ -12,6 +12,11 @@ namespace KartingApp.Domain.Concrete
     {
         private EFDbContext context = new EFDbContext();
 
+        public IQueryable<RaceResult> RaceResults
+        {
+            get { return context.RaceResults; }
+        }
+
         public void SaveDriver(Driver driver)
         {
             if (driver.DriverID == 0)
@@ -28,7 +33,7 @@ namespace KartingApp.Domain.Concrete
 
         public IQueryable<Driver> Drivers
         {
-            get { return context.Drivers; }
+            get { return context.Drivers.Include("RaceResults"); }
         }
 
         public void DeleteDriver(Driver driver)

@@ -1,0 +1,23 @@
+﻿@model KartingApp.Domain.Entities.Track
+
+@{
+    ViewBag.Title = "Edit Track";
+}
+
+@using (Html.BeginForm("Edit", "Track",
+    FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.EditorForModel()
+
+    <input type="submit" value="Save" />
+}
+
+@using (Html.BeginForm("Delete", "Track",
+    FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
+    <div>@Html.EditorFor(x => x.TrackID)</div>
+    @Html.HiddenFor(x => x.Description)
+    <input type="submit" value="Delete" />
+}
+
+<br />@Html.ActionLink("Cancel and return to List", "List")

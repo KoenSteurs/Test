@@ -17,5 +17,6 @@ namespace KartingApp.Domain.Entities
 
         public string Hometown { get; set; }
 
+        public ICollection<RaceResult> RaceResults { get; set; }
     }
 }

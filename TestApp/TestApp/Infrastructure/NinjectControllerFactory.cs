@@ -39,9 +39,9 @@ namespace KartingApp.WebUI.Infrastructure
             //ninjectKernel.Bind<IDriverRepository>().ToConstant(mock.Object);
 
             ninjectKernel.Bind<IDriverRepository>().To<EFDriverRepository>();
-            //ninjectKernel.Bind<ITrackRepository>().To<EFTrackRepository>();
-            //ninjectKernel.Bind<IRaceRepository>().To<EFRaceRepository>();
-            //ninjectKernel.Bind<IRaceResultRepository>().To<EFRaceResultRepository>();
+            ninjectKernel.Bind<ITrackRepository>().To<EFTrackRepository>();
+            ninjectKernel.Bind<IRaceRepository>().To<EFRaceRepository>();
+            ninjectKernel.Bind<IRaceResultRepository>().To<EFRaceResultRepository>();
         }
     }
 }

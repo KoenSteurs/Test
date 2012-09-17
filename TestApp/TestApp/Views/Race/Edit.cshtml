@@ -1,0 +1,42 @@
+﻿@model KartingApp.Domain.Entities.Race
+
+@{
+    ViewBag.Title = "Edit Race";
+}
+
+@using (Html.BeginForm("Edit", "Race",
+    FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary()
+
+    <div>@Html.EditorFor(x => x.RaceID)</div>
+    <div>@Html.LabelFor(x => x.TrackID)</div>
+    <div>@Html.DropDownListFor(x => x.TrackID, (SelectList)ViewData["Track"], new { @class = "styled-select" })</div>
+    <div>@Html.LabelFor(x => x.Date)</div>
+    <div>@Html.EditorFor(x => x.Date)</div>
+    <br />
+    
+    if (Model.RaceID != 0)
+    {
+        foreach (KartingApp.Domain.Entities.RaceResult p in Model.RaceResults)
+        {
+            <div>@Html.RouteLink(@p.RaceResultDescription, new { controller = "RaceResult", action = "Edit", id = @p.RaceResultID })</div>
+        }
+    }
+    <p>@Html.RouteLink("Add race result", new { controller = "RaceResult", action = "Create", RaceId = @Model.RaceID })</p>
+    
+    <input type="submit" value="Save" />
+}
+
+@if (Model.RaceID != 0)
+{
+    using (Html.BeginForm("Delete", "Race",
+        FormMethod.Post, new { enctype = "multipart/form-data" }))
+    { 
+        <div>@Html.EditorFor(x => x.RaceID)</div>
+@*        @Html.HiddenFor(x => x.RaceDescription)*@
+        <input type="submit" value="Delete" />
+    }
+}
+
+<br />@Html.ActionLink("Cancel and return to List", "List")

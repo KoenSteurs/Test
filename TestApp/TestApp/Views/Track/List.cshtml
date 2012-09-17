@@ -1,0 +1,14 @@
+﻿@model IEnumerable<KartingApp.Domain.Entities.Track>
+
+@{
+    ViewBag.Title = "Tracks";
+}
+
+<h2>Tracks</h2>
+@foreach (var p in Model) {
+        @Html.ActionLink(p.Description, "Detail", new { id = p.TrackID })<br />
+}
+
+<p>@Html.ActionLink("Add track", "Create")</p>
+
+@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })

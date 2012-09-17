@@ -1,0 +1,19 @@
+﻿@model IEnumerable<KartingApp.Domain.Entities.RaceResult>
+
+@{
+    ViewBag.Title = "Race Results";
+}
+
+<h2>Race Results</h2>
+@foreach (var p in Model)
+{
+    <div>RaceResultID: @p.RaceResultID</div>
+    <div>Race Description: @p.Race.RaceDescription</div>
+    <div>Driver Name: @p.Driver.Name</div>
+    <div>BestLap: @p.BestLap</div>
+    @Html.ActionLink("Edit","Edit", new { id=p.RaceResultID })
+    <br /><br />
+}
+    <p>@Html.ActionLink("Add race result", "Create")</p>
+
+    @Html.RouteLink("Menu", new { controller = "Main", action = "Index" })

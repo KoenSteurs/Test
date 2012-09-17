@@ -1,0 +1,27 @@
+﻿@model KartingApp.Domain.Entities.Race
+
+@{
+    AjaxOptions ajaxOpts = new AjaxOptions
+    {
+        UpdateTargetId = "results",
+    };
+    ViewBag.Title = "Race Detail";
+}
+
+<h2>@Model.RaceDescription</h2>
+
+    <div id="results">
+    @{  
+        int counter = 1;  
+        foreach (var r in Model.RaceResults.OrderBy(x => x.BestLap))
+        {
+            <div>@counter. @r.Driver.Name - @r.BestLap</div>
+            {counter = counter + 1;} 
+
+        }
+    }
+    </div>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = @Model.RaceID })</p>
+
+@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })

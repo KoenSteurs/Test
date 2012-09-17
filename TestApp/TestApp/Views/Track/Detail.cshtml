@@ -1,0 +1,16 @@
+﻿@model KartingApp.Domain.Entities.Track
+
+@{
+    ViewBag.Title = "Track Detail";
+}
+
+<h2>@Model.Description</h2>
+
+@foreach (KartingApp.Domain.Entities.Race r in Model.Races)
+{
+    <div>@Html.RouteLink(r.RaceDescription, new { controller = "Race", action = "Detail", id = r.RaceID })</div>
+}
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = @Model.TrackID })</p>
+
+@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })
