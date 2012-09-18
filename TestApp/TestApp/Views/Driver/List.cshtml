@@ -10,7 +10,7 @@
 {
     foreach (var p in Model)
     {
-        @Html.ActionLink(p.Name + "," + p.Hometown, "Detail", new { id = p.DriverID })<br />
+        <h6>@Html.ActionLink(p.Name + "," + p.Hometown, "Detail", new { id = p.DriverID })</h6>
     }
 }
 else
@@ -18,6 +18,6 @@ else
     <p>Model Is null!</p>
 }
 
-<p>@Html.ActionLink("Add driver", "Create")</p>
+<h6>@Html.ActionLink("Add driver", "Create")</h6>
 
-@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })
+<h6>@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })</h6>
