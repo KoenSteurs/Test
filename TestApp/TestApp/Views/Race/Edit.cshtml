@@ -9,10 +9,10 @@
 {
     @Html.ValidationSummary()
 
-    <div>@Html.EditorFor(x => x.RaceID)</div>
-    <div>@Html.LabelFor(x => x.TrackID)</div>
+    @Html.EditorFor(x => x.RaceID)
+    <div class="editor-label">@Html.LabelFor(x => x.TrackID)</div>
     <div>@Html.DropDownListFor(x => x.TrackID, (SelectList)ViewData["Track"], new { @class = "styled-select" })</div>
-    <div>@Html.LabelFor(x => x.Date)</div>
+    <div class="editor-label">@Html.LabelFor(x => x.Date)</div>
     <div>@Html.EditorFor(x => x.Date)</div>
     <br />
     
@@ -23,7 +23,7 @@
             <div>@Html.RouteLink(@p.RaceResultDescription, new { controller = "RaceResult", action = "Edit", id = @p.RaceResultID })</div>
         }
     }
-    <p>@Html.RouteLink("Add race result", new { controller = "RaceResult", action = "Create", RaceId = @Model.RaceID })</p>
+    <h3>@Html.RouteLink("Add race result", new { controller = "RaceResult", action = "Create", RaceId = @Model.RaceID })</h3>
     
     <input type="submit" value="Save" />
 }
@@ -34,9 +34,9 @@
         FormMethod.Post, new { enctype = "multipart/form-data" }))
     { 
         <div>@Html.EditorFor(x => x.RaceID)</div>
-@*        @Html.HiddenFor(x => x.RaceDescription)*@
+        <br />
         <input type="submit" value="Delete" />
     }
 }
 
-<br />@Html.ActionLink("Cancel and return to List", "List")
+<h3>@Html.ActionLink("Cancel and return to List", "List")</h3>

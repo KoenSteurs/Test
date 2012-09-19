@@ -4,12 +4,12 @@
     ViewBag.Title = "Races";
 }
 
-<h2>Races</h2>
+<h1>Races</h1>
 @foreach (var p in Model) 
 {
-        @Html.ActionLink(p.RaceDescription, "Detail", new { id = p.RaceID })<br />
+        <h3>@Html.ActionLink(p.RaceDescription, "Detail", new { id = p.RaceID })</h3>
 }
 
-<p>@Html.ActionLink("Add race", "Create")</p>
+<h3>@Html.ActionLink("Add race", "Create")</h3>
 
-@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })
+<h3>@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })</h3>

@@ -2,20 +2,13 @@
 
 @{
     ViewBag.Title = "Edit Driver";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<script type="text/javascript">
-    $(document).ready(function () {
-//        $('input').button().css('float', 'left').css('margin', '5px');
-    }
-</script>
 
 @using (Html.BeginForm("Edit", "Driver",
     FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.EditorForModel()
-
+    <br />
     <input type="submit" value="Save" />
 }
 
@@ -25,7 +18,8 @@
     <div>@Html.EditorFor(x => x.DriverID)</div>
     @Html.HiddenFor(x => x.Hometown)
     @Html.HiddenFor(x => x.Name)
+    <br />
     <input type="submit" value="Delete" />
 }
 
-<h6>@Html.ActionLink("Cancel and return to List", "List")</h6>
+<h3>@Html.ActionLink("Cancel and return to List", "List")</h3>

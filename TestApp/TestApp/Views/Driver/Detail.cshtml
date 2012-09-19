@@ -4,12 +4,12 @@
     ViewBag.Title = "Driver Detail";
 }
 
-<h2 id="name">@Model.Name</h2>
+<h1 id="name">@Model.Name</h1>
 @foreach (var r in Model.RaceResults)
 {
-    <div>@Html.RouteLink(r.RaceResultDescriptionForDriver, new { controller = "Race", action = "Detail", id = r.RaceID })</div>
+    <h3>@Html.RouteLink(r.RaceResultDescriptionForDriver, new { controller = "Race", action = "Detail", id = r.RaceID })</h3>
 }  
 
-<p>@Html.ActionLink("Edit", "Edit", new { id = @Model.DriverID })</p>
+<h3>@Html.ActionLink("Edit", "Edit", new { id = @Model.DriverID })</h3>
 
-@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })
+<h3>@Html.RouteLink("Menu", new { controller = "Main", action = "Index" })</h3>

@@ -8,7 +8,7 @@
     FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.EditorForModel()
-
+    <br />
     <input type="submit" value="Save" />
 }
 
@@ -17,7 +17,8 @@
 { 
     <div>@Html.EditorFor(x => x.TrackID)</div>
     @Html.HiddenFor(x => x.Description)
+    <br />
     <input type="submit" value="Delete" />
 }
 
-<br />@Html.ActionLink("Cancel and return to List", "List")
+<h3>@Html.ActionLink("Cancel and return to List", "List")</h3>
